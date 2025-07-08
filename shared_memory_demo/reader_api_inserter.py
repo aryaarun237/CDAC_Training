@@ -1,4 +1,5 @@
-print("Reader API Inserter starting...")
+
+# print("Reader API Inserter starting...")
 
 from multiprocessing import shared_memory
 import requests, datetime, time, logging, json, ast
@@ -73,6 +74,48 @@ while True:
             continue
 
     time.sleep(3)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
