@@ -1,3 +1,5 @@
+print("Reader API Inserter starting...")
+
 from multiprocessing import shared_memory
 import requests, datetime, time, logging, json, ast
 from pathlib import Path

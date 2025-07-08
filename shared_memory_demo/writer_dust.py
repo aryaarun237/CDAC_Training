@@ -5,6 +5,7 @@ import random
 device_ids = ['SENSOR01', 'SENSOR02', 'SENSOR03']
 shm_dict = {}
 
+
 for device in device_ids:
     pm10 = random.randint(100, 400)
     pm25 = random.randint(50, 200)
