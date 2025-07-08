@@ -1,12 +1,18 @@
 from django.db import models
 
 class DustReading(models.Model):
-    sensor_id = models.CharField(max_length=50)
-    timestamp = models.DateTimeField(auto_now_add=True)
+    sensor_id = models.CharField(max_length=20)
+    timestamp = models.DateTimeField()
     latitude = models.FloatField()
     longitude = models.FloatField()
-    dust_level = models.IntegerField()
-    temperature = models.IntegerField()
+    pm10 = models.FloatField()
+    pm25 = models.FloatField()
+    so2 = models.FloatField()
+    no2 = models.FloatField()
+    no = models.FloatField()
+    co = models.FloatField()
+    temperature = models.FloatField()
+    humidity = models.FloatField()
     
     class Meta:
         db_table = 'dust_read'
