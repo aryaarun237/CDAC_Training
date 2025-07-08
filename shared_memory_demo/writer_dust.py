@@ -1,25 +1,3 @@
-# from multiprocessing import shared_memory
-# import time
-
-# # Simulate fixed-length raw sensor data in bytes (hex could be handled similarly)
-# data = bytearray(b'SENSOR01-350-36-085241-0769366')  # example: sensorid-dust-temp-lat-long
-
-# # Create a shared memory block
-# shm = shared_memory.SharedMemory(create=True, size=len(data), name="sensor_raw_data")
-
-# # Write data into shared memory
-# shm.buf[:len(data)] = data
-
-# print("Data written to shared memory.")
-
-# try:
-#     while True:
-#         time.sleep(1)
-# except KeyboardInterrupt:
-#     print("Closing shared memory")
-#     shm.close()
-#     shm.unlink()
-
 from multiprocessing import shared_memory
 import time
 import random
