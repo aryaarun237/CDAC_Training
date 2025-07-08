@@ -9,7 +9,7 @@ for device in device_ids:
     pm10 = random.randint(100, 400)
     pm25 = random.randint(50, 200)
 
-    # Randomly decide if PM2.5 should be an expression
+    # PM2.5 can be a valid simple expression
     if random.choice([True, False]):
         pm25_value = f"{pm10}+{pm25}"
     else:
@@ -27,7 +27,7 @@ for device in device_ids:
     data = f"{device}-PM10:{pm10}-PM2.5:{pm25_value}-SO2:{so2}-NO2:{no2}-NO:{no}-CO:{co}-TEMP:{temp}-HUM:{hum}-LAT:{lat}-LON:{lon}"
     byte_data = bytearray(data.encode())
 
-    shm = shared_memory.SharedMemory(create=True, size=len(byte_data), name=f"{device}_data")
+    shm = shared_memory.SharedMemory(create=True, size=256, name=f"{device}_data")  # Increased size
     shm.buf[:len(byte_data)] = byte_data
     shm_dict[device] = shm
 
