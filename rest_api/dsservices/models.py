@@ -7,14 +7,14 @@ class DustReading(models.Model):
     longitude = models.FloatField()
     pm10 = models.FloatField()
     pm25 = models.FloatField()
-    pm25_raw = models.CharField(max_length=50, null=True, blank=True)
     so2 = models.FloatField()
     no2 = models.FloatField()
     no = models.FloatField()
     co = models.FloatField()
     temperature = models.FloatField()
     humidity = models.FloatField()
-    
+    raw_payload = models.TextField(null=True, blank=True)
+
     class Meta:
         db_table = 'dust_read'
     def __str__(self):
